@@ -8,17 +8,17 @@
 
 This guide will walk you through the process of downloading, installing, and using the `ffmpeg-kit-https` AAR file from your local Maven repository.
 
-### Download AAR Binary Files  
+### Download AAR Binary Files
 
-You can download all available FFMPEG AAR binary files from the link below:  
+You can download all available FFMPEG AAR binary files from the link below:
 
 [Download AAR Files](https://drive.google.com/file/d/1jRhgfd7fjzpuOvVWXOhnr_Uzui0fJszf/view?usp=sharing) (Google Drive Link)
 
-### Install AAR File to Local Maven  
+### Install AAR File to Local Maven
 
-Make sure your system has Maven installed.  
+Make sure your system has Maven installed.
 
-Run the following command to install the AAR file to your local Maven repository:  
+Run the following command to install the AAR file to your local Maven repository:
 
 ```sh
 mvn install:install-file \
@@ -59,14 +59,12 @@ dependencies {
 You can also use this repo in your app, but make sure the AAR file is installed in your local Maven:
 
 ```yaml
-  ffmpeg_kit_flutter:
-    git:
-      url: https://github.com/nightmarefsm/ffmpeg-kit-new
-      ref: flutter_3.29_standard
-      path: flutter/flutter
-  ```
-
-
+ffmpeg_kit_flutter:
+  git:
+    url: https://github.com/nightmarefsm007/ffmpeg-kit-new
+    ref: flutter_3.29_standard
+    path: flutter/flutter
+```
 
 <img src="https://github.com/arthenica/ffmpeg-kit/blob/main/docs/assets/ffmpeg-kit-icon-v9.png" width="240">
 
