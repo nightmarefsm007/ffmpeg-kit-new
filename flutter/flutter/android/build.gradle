@@ -1,0 +1,73 @@
+group = "com.arthenica.ffmpegkit.flutter"
+version = "1.0-SNAPSHOT"
+
+buildscript {
+    ext.kotlin_version = "2.1.10"
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.7.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+
+android {
+    namespace = "com.arthenica.ffmpegkit.flutter"
+    compileSdk = 35
+
+    lintOptions {
+        disable 'GradleCompatible'
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+    }
+
+    defaultConfig {
+        minSdk = 24
+        versionCode = 603
+        versionName = "6.0.3"
+    }
+
+    dependencies {
+        implementation('androidx.annotation:annotation:1.5.0')
+        implementation('com.arthenica:ffmpeg-kit-https:6.0-2.LTS') // Dependency from local Maven repository
+        implementation('com.arthenica:smart-exception-java:0.2.1') // Dependency from Live
+        implementation('com.arthenica:smart-exception-common:0.2.1') // Dependency from Live
+
+        
+        // implementation files('libs/smart-exception-java-0.2.1.jar') Dependency from local Maven repository
+        // implementation files('libs/smart-exception-common-0.2.1.jar') Dependency from local Maven repository
+    }
+}
+
